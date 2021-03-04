@@ -14,7 +14,7 @@ const video = document.querySelector('video');
 const constraints = {
   video: { facingMode: 'user' },
   // Uncomment to enable audio
-  // audio: true,
+  audio: true,
 };
 
 navigator.mediaDevices
