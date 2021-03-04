@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 
-const port = 4000;
-
 const http = require('http');
 const server = http.createServer(app);
 
@@ -10,6 +8,7 @@ const io = require('socket.io')(server);
 app.use(express.static(__dirname + '/public'));
 
 io.sockets.on('error', (e) => console.log(e));
+const port = process.env.PORT || 4000;
 server.listen(port, () => console.log(`Server is running on port ${port}`));
 
 let broadcaster;
